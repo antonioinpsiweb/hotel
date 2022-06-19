@@ -1,3 +1,498 @@
-<html>
-  <h1>hola</h1>
-</html>
+<!DOCTYPE html>
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Evaluable E1</title>
+<style>
+	.titulo1{font:normal 70px Arial;position:relative;top:-300px; text-shadow: 2px 2px 15px black;}
+	.titulo2{font:normal 20px sans-serif;position:relative;top:-300px;background-color:white;opacity:70%;
+				color:#000;height:50px;vertical-align:middle;line-height:50px}
+#gotop{background: #000;color:white;position:fixed;bottom:20px;cursor:pointer;
+right:55px;width:50px;height:50px;font-size:30pt;border:1px solid white; border-radius:5px}
+.mySlides2 {display:none}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="index_files/favicon.ico">
+<!--link rel="stylesheet" href="./index_files/w3b.css"-->
+<link rel="stylesheet" href="index_files/w3.css">
+
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+
+var myIndex = 0;
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides2");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</head>
+<body onload="carousel();" style="width:95%;margin:auto">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+    
+	<img src="index_files/logo.png"/>
+	<!--b>BR</b> Inicio</a-->
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+	  <a href="#home" class="w3-bar-item w3-button">Inicio</a>
+      <a href="#projects" class="w3-bar-item w3-button">Apartamentos</a>
+	  <a href="#about" class="w3-bar-item w3-button">Situación</a>
+      <a href="#servicios" class="w3-bar-item w3-button">Servicios</a>
+	  <a href="#galeria" class="w3-bar-item w3-button">Galería</a>
+	  <a href="#contact" class="w3-bar-item w3-button">Reservas</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;background-color:black;color:white" id="home">
+  <img class="w3-image" src="index_files/logo.png" >
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white">
+		<span class="w3-padding w3-black w3-opacity-min"><b>HOTEL</b></span> 
+		<span class="w3-hide-small w3-text-light-grey">Los Dragos</span>
+	</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:2000px">
+
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="index_files/1.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1 class="titulo1">Hoteles Los Dragos</h1>
+      <p class="titulo2"><b>Únete a nuestro Club Dragos y disfruta de ventajas increíbles</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="index_files/2.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1 class="titulo1">Hoteles Los Dragos</h1>
+      <p class="titulo2"><b>Únete a nuestro Club Dragos y disfruta de ventajas increíbles</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="index_files/3.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h1 class="titulo1">Hoteles Los Dragos</h1>
+      <p class="titulo2"><b>Únete a nuestro Club Dragos y disfruta de ventajas increíbles</b></p>    
+    </div>
+  </div>
+
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+	<br/>
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Apartamentos</h2>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">1 dormitorio simple</div>
+        <img src="index_files/ap1.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">1 dormitorio vista piscina</div>
+        <img src="index_files/ap2.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">1 dormitorio vista al mar</div>
+        <img src="index_files/ap3.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">2 dormitorios simples</div>
+        <img src="index_files/ap4.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">2 dormitorios vista piscina</div>
+        <img src="index_files/ap5.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">2 dormitorios vista al mar</div>
+        <img src="index_files/ap6.jpg" alt="House" style="width:100%">
+      </div>
+    </div>	
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">3 dormitorios vista piscina</div>
+        <img src="index_files/ap7.jpg" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">3 dormitorios vista al mar</div>
+        <img src="index_files/ap8.jpg" alt="House" style="width:100%">
+      </div>
+    </div>	
+  </div>
+  
+  
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+  <br/>
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Situación</h2>
+   
+		
+	<p>Los huéspedes de Dragos del Norte podrán relajarse en la piscina, hacer deporte en un moderno gimnasio o refrescarse y pasear en un entorno muy agradable y natural
+    </p>
+  </div>
+
+  <div class="w3-row-padding ">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="./index_files/sit1.jpg" alt="Piscina" style="width:100%">
+      <h3>Los Acantilados de los Gigantes</h3>
+      <p class="w3-opacity">15 km</p>
+      <p>Estos acantilados eran considerados por los habitantes nativos de las Islas Canarias, los guanches, como la ‘Muralla del Infierno’ dado que consideraban que ahí se acababa el mundo. Estos acantilados de roca volcánica se han convertido en todo un reclamo turístico para la isla de Tenerife y no solo por sus impresionantes vistas, sino también por la riqueza del fondo marino que les baña. <br/><br/></p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="./index_files/sit2.jpg" alt="Deporte" style="width:100%">
+      <h3>Santiago del Teide</h3>
+      <p class="w3-opacity">15 km</p>
+      <p>Entre la costa de Puerto Santiago y las pinedas situadas en la base del volcán tinerfeño se encuentra el municipio de Santiago del Teide, un pueblo ideal donde pasar tiempo tanto en sus bosques como en la playa. En la parte alta de la localidad isleña se puede observar el contraste de los paisajes volcánicos, sus viñedos y las higueras. La Iglesia de San Fernando, la reserva natural de Chinyero y la playa de La Arena son uno de los lugares que no te puedes perder en Santiago del Teide.</p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="./index_files/sit3.jpg" alt="Gsatronomía" style="width:100%">
+      <h3>Parque nacional del Teide</h3>
+      <p class="w3-opacity">41 km</p>
+      <p>Un lugar ideal para ver la originalidad de la naturaleza volcánica propia de Tenerife. Situado en el centro de la isla, es uno de los parques nacionales más importantes del país al tener como protagonista el pico más alto de la orografía española, el Teide. Este campo de lavas a más de 2000 metros de altitud se compone de una gran diversidad de fauna y flora como el lagarto de canarias, el canario o la violeta del teide.</p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="./index_files/sit4.jpg" alt="Gimnasio" style="width:100%">
+      <h3>Playa de las Américas</h3>
+      <p class="w3-opacity">26 km</p>
+      <p>El gimnasio de Dragos del Sur es gratuito está muy bien equipado para que los amantes del deporte sigan pudiendo practicarlo durante las vacaciones <br/><br/></p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+  </div>
+
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="servicios">
+  <br/>
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Servicios</h2>
+   
+		
+	<p>Los huéspedes de Dragos del Norte podrán relajarse en la piscina, hacer deporte en un moderno gimnasio o refrescarse y pasear en un entorno muy agradable y natural
+    </p>
+  </div>
+
+  <div class="w3-row-padding ">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="index_files/ser1.jpg" alt="Piscina" style="width:100%">
+      <h3>Disfruta de la piscina</h3>
+      <p class="w3-opacity">Servicio Gratuito</p>
+      <p>Dragos del Norte cuenta con una piscina y zona de tumbonas desde donde poder tomar el sol, darse un baño relajante o leer un libro en total tranquilidad. <br/><br/></p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="index_files/ser2.jpg" alt="Deporte" style="width:100%">
+      <h3>Haz deporte</h3>
+      <p class="w3-opacity">Servicio Gratuito</p>
+      <p>Podrás continuar con tu costumbre de hacer algo de ejercicio todos los días ya que Dragos del Norte pone a disposición de sus clientes un gimnasio completo y gratuito.</p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="index_files/ser3.jpg" alt="Gsatronomía" style="width:100%">
+      <h3>Prueba la gastronomía</h3>
+      <p class="w3-opacity">Servicio Gratuito</p>
+      <p>El apartahotel ofrece un desayuno exquisito y completo en el restaurante principal  y dispone de un chill out tapas bar junto a la piscina con todos los productos típicos de la isla para degustar la famosa cocina canaria.</p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="index_files/ser4.jpg" alt="Gimnasio" style="width:100%">
+      <h3>Manténte en forma</h3>
+      <p class="w3-opacity">Servicio Gratuito</p>
+      <p>El gimnasio de Dragos del Sur es gratuito está muy bien equipado para que los amantes del deporte sigan pudiendo practicarlo durante las vacaciones <br/><br/></p>
+      <p><button class="w3-button w3-light-grey w3-block">más info</button></p>
+    </div>
+  </div>
+  
+  <!-- galeria -->
+<div class="w3-container" id="galeria">
+<br/><br/><br/>
+<h2>Galería de Imágenes</h2>
+<div class="w3-row-padding" style="margin:0 -16px">
+  <div class="w3-col s4">
+    <img src="index_files/gal1.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(1)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal2.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(2)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal3.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(3)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal4.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(4)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal5.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(5)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal6.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(6)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal7.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(7)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal8.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(8)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal9.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(9)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal10.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(10)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal11.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(11)" class="w3-hover-shadow">
+  </div>
+  <div class="w3-col s4">
+    <img src="index_files/gal12.jpg" style="width:100%;cursor:pointer"
+    onclick="openModal();currentDiv(12)" class="w3-hover-shadow">
+  </div>    
+</div>
+
+<div id="myModal" class="w3-modal w3-black">
+ <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright" onclick="closeModal()" style="cursor:pointer">×</span>
+ <div class="w3-modal-content">
+
+  <div class="w3-content" style="max-width:1200px">
+   <img class="mySlides2" src="index_files/gal1.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal2.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal3.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal4.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal5.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal6.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal7.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal8.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal9.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal10.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal11.jpg" style="width:100%">
+   <img class="mySlides2" src="index_files/gal12.jpg" style="width:100%">   
+   <div class="w3-row w3-black w3-center">
+    <div class="w3-display-container">
+     <p id="caption"></p>
+     <span class="w3-display-left w3-btn" onclick="plusDivs(-1)">❮</span>
+     <span class="w3-display-right w3-btn" onclick="plusDivs(1)">❯</span>
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal1.jpg" style="width:100%" onclick="currentDiv(1)" alt="Nature and sunrise">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal2.jpg" style="width:100%" onclick="currentDiv(2)" alt="French Alps">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal3.jpg" style="width:100%" onclick="currentDiv(3)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal4.jpg" style="width:100%" onclick="currentDiv(4)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal5.jpg" style="width:100%" onclick="currentDiv(5)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal6.jpg" style="width:100%" onclick="currentDiv(6)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal7.jpg" style="width:100%" onclick="currentDiv(7)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal8.jpg" style="width:100%" onclick="currentDiv(8)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal9.jpg" style="width:100%" onclick="currentDiv(9)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal10.jpg" style="width:100%" onclick="currentDiv(10)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal11.jpg" style="width:100%" onclick="currentDiv(11)" alt="Mountains and fjords">
+    </div>
+    <div class="w3-col s4">
+     <img class="demo w3-opacity w3-hover-opacity-off" src="index_files/gal12.jpg" style="width:100%" onclick="currentDiv(12)" alt="Mountains and fjords">
+    </div>	
+   </div> <!-- End row -->
+  </div> <!-- End w3-content -->
+  
+ </div> <!-- End modal content -->
+</div> <!-- End modal -->
+
+</div>
+  
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact" style="max-width:800px;text-align:center;margin:auto">
+	<br/>
+    <h2 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contacto</h2>
+    <p>Ponte en contacto con nosotros</p>
+    <form action="https://www.w3schools.com/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required="" name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required="" name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required="" name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required="" name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> ENVIAR
+      </button>
+    </form>
+  </div>
+  
+<!-- Image of location/map -->
+<div class="w3-container">
+  <img src="./index_files/pie1.jpg" class="w3-image" style="width:100%">
+</div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+
+<div style="width:70%;margin:auto;text-align:left">
+  
+  <div style="width:100%;margin:auto">
+	<h1>Hoteles Los Dragos</h1>
+	
+	</div>
+	
+	 <div style="width:33%;margin:auto;display:inline-block">
+	
+	<h2>Dragos del Norte</h2>
+
+	<p>Situado en Puerto de la Cruz, Tenerife. Ofrece naturaleza, playas y ocio para todos los gustos.</p>
+
+	<p>Puerto de la Cruz</p>
+
+	<p>+34 922 386 700</p>
+
+	<p>reservasnorte@hoteles-losdragos.com </p> 
+	
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.414377621729!2d-16.552201889333112!3d28.406750826920977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a7feed0811b0b%3A0x1bea3d1a7d3fe181!2sApartamentos%20Los%20Dragos%20del%20Norte!5e0!3m2!1ses!2ses!4v1655481213352!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div style="width:33%;margin:auto;display:inline-block">
+	 <h2>Dragos del Sur </h2>
+
+	<p>Situado en Puerto Santiago, Tenerife. Tranquilidad, playa y vistas a Los Gigantes y La Gomera.</p>
+
+	<p>Santiago del Teide</p>
+
+	<p>+34 922 862 550</p>
+	
+
+	<p>jreservas@hoteles-losdragos.com </p>
+	
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.064974326888!2d-16.84358214913818!3d28.235707508594686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a8c4758b997c5%3A0xa376a161d1629e23!2sAparthotel%20Dragos%20del%20Sur!5e0!3m2!1ses!2ses!4v1655481277935!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div style="width:33%;margin:auto;display:inline-block;vertical-align:top">
+	 <h2>Newsletter</h2>
+
+	<p>Recibe las últimas novedades</p>
+
+	<p>SUSCRIBIRSE </p>
+  </div>
+  
+</div>
+  
+  
+</footer>
+
+<button id="gotop" onclick="window.scrollTo(0,0)">^</button>
+</body></html>
